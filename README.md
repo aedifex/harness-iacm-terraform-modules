@@ -3,8 +3,6 @@ A clean, versioned library of reusable Terraform modules designed for Harness IA
 
 This repository is built for Solutions Engineers, platform teams, and customers who want a practical, minimal way to standardize infrastructure using modular Terraform and Harness.
 
----
-
 ## 🎯 Purpose  
 This project demonstrates:
 
@@ -16,8 +14,6 @@ This project demonstrates:
 - Seamless integration with Harness pipelines for promotion workflows  
 
 The emphasis is on clarity, composability, and real-world usability.
-
----
 
 ## 🏗 Architecture Overview  
 
@@ -36,8 +32,6 @@ Each module:
 
 This layer represents the **infrastructure library**.
 
----
-
 ### Layer 2 — Consumption (external repo)  
 Where modules are assembled into real environments.
 
@@ -49,8 +43,6 @@ Examples:
 
 This layer represents the **live infrastructure state**.
 
----
-
 ## 📁 Repository Structure  
 .
 ├── modules/  
@@ -60,8 +52,6 @@ This layer represents the **live infrastructure state**.
 │   │   └── outputs.tf  
 │   │  
 │   └── vpc/  (future)  
-
----
 
 ## 🚀 How It Works  
 
@@ -87,9 +77,7 @@ module "ec2" {
 - Update module  
 - Tag new version (`v1.1.0`)  
 - Update `ref` in consumer  
-- Apply via Harness IACM  
-
----
+- Apply via Harness IACM
 
 ## 🔄 Deployment Pattern  
 
@@ -103,8 +91,6 @@ Harness ties this together by:
 - Managing Terraform execution and state  
 - Enabling promotion pipelines across environments  
 - Providing visibility into infrastructure changes over time  
-
----
 
 ## 💡 Why This Pattern  
 
@@ -120,8 +106,6 @@ This repository enables:
 It mirrors how mature teams treat infrastructure:
 as versioned, reusable software artifacts
 
----
-
 ## ⚠ Notes  
 
 - Modules should remain small and focused  
@@ -130,15 +114,11 @@ as versioned, reusable software artifacts
 - Consumers should always pin versions (`ref`)  
 - Harness IACM manages remote state and execution  
 
----
-
 ## 👤 Intended Audience  
 
 - Harness Solutions Engineers  
 - Platform / DevOps teams  
 - Customers evaluating Terraform + IACM patterns  
 - Anyone building reusable infrastructure libraries  
-
----
 
 Clean. Composable. Harness-native.
