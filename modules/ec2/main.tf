@@ -55,7 +55,7 @@ resource "aws_security_group" "web_sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] # intentionally insecure for demo
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
@@ -84,16 +84,16 @@ resource "aws_security_group" "web_sg" {
 
 resource "aws_instance" "web" {
   ami                    = data.aws_ami.amazon_linux.id
-  instance_type          = "t3.micro"
+  instance_type          = var.instance_type
   subnet_id              = data.aws_subnet.default.id
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
-  key_name = "aws-iac-lab-usw2-ssh"
+  key_name = var.key_name
 
   associate_public_ip_address = true
 
   tags = {
-    Name = "terraform-web-pr"
+    Name = var.name
   }
 }
 
