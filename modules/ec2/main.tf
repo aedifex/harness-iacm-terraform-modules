@@ -94,7 +94,7 @@ resource "aws_instance" "web" {
 
   user_data = <<-EOF
 #!/bin/bash
-echo "v1" > /etc/version
+echo "v2" > /etc/version
 EOF
 
   tags = {
