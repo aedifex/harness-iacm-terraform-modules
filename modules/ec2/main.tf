@@ -92,6 +92,11 @@ resource "aws_instance" "web" {
 
   associate_public_ip_address = true
 
+  user_data = <<-EOF
+#!/bin/bash
+echo "v1" > /etc/version
+EOF
+
   tags = {
     Name = var.name
   }

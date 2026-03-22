@@ -9,6 +9,6 @@ variable "name" {
 }
 
 variable "key_name" {
-  type = string
+  type    = string
   default = "aws-iac-lab-usw2-ssh"
 }
