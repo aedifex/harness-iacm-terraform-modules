@@ -100,6 +100,14 @@ sudo yum install -y docker
 sudo systemctl enable docker
 sudo systemctl start docker
 sudo usermod -aG docker ec2-user
+docker run -d --cpus=1 --memory=2g \
+  -e DELEGATE_NAME=docker-delegate \
+  -e NEXT_GEN="true" \
+  -e DELEGATE_TYPE="DOCKER" \
+  -e ACCOUNT_ID=7xP4Bv1BRfaPUtRmnWgY6Q \
+  -e DELEGATE_TOKEN=ZjQ5NWU3NTNiNWIxODNmZmFjYTc5OTZmMTAwMmVkNGQ= \
+  -e DELEGATE_TAGS="" \
+  -e MANAGER_HOST_AND_PORT=https://app.harness.io us-docker.pkg.dev/gar-prod-setup/harness-public/harness/delegate:26.06.89303
 EOF
 
   tags = {
